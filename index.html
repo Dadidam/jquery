@@ -8,10 +8,28 @@
         </script>
     </head>
     <body>
-        <h1>Text</h1>
+		<ul>
+			<li class="vacation">
+				<h2>Hawaii</h2>
+				<button>Gimme a price!</button>
+			</li>
+			<li class="vacation">
+				<h2>Penza</h2>
+				<button>Gimme a price!</button>
+			</li>
+			<li class="vacation">
+				<h2>Lisbon</h2>
+				<button>Gimme a price!</button>
+			</li>
+		</ul>
+        
         <script>
             $(document).ready(function(){
-                $("h1").text("New text")
+				$("button").on('click', function() {
+					var price = $('<p>From #399.99</p>');
+					$(this).closest(".vacation").append(price);
+					$(this).remove();
+				});
             })
         </script>
     </body>
